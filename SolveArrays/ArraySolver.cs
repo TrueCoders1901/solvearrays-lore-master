@@ -30,31 +30,41 @@ namespace SolveArrays
 
         public double AverageEvens(int[] numbers)
         {
-            int evens = 0;
-            double average = 0;
+            int totalOfEvens = 0;
+            int countOfEvens = 0;
+
             foreach (int number in numbers)
             {
                 if (number % 2 == 0)
                 {
-                    evens = evens + number;
-                    average = evens / numbers.Length;
+                    totalOfEvens += number;
+                    countOfEvens += 1;
                 }
             }
-            return average;
+
+            if (countOfEvens == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                double average = (double)totalOfEvens / countOfEvens;
+                return average;
+            }
         }
 
         public bool IsSumOdd(List<int> numbers)
         {
-            int total = 0;
-            foreach (int number in numbers)
+            int total = Sum(numbers.ToArray());
+
+            if (total % 2 == 0)
             {
-                total = total + number;
-                if (total % 2 != 0)
-                {
-                    return true;
-                }
+                return false;
             }
-            return true;
+            else
+            {
+                return true;
+            }
         }
     }
 }
