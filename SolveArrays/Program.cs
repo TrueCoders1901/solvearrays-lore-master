@@ -7,7 +7,7 @@ namespace SolveArrays
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, world!");
-            Console.WriteLine("again");
+            Console.WriteLine("a");
         }
     }
 }
